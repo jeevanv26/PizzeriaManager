@@ -2,21 +2,21 @@ package application;
 
 public class Hawaiian extends Pizza{
 	
-    public static final double smallSize = 12.99;
-    public static final double mediumSize = 14.99;
-    public static final double largeSize = 16.99;
+    public static final double smallSize = 10.99;
+    public static final double mediumSize = 12.99;
+    public static final double largeSize = 14.99;
     public static final double toppingIncrease = 1.49;
     public static final double taxRate = 1.06625;
     public static final int toppingCap = 7;
     public static final int initial = 2;
-    private int  numOfToppings;
+    private int numOfToppings;
     
 
     public Hawaiian() {
     	
     	numOfToppings = initial;
-    	toppings.add(Topping.Sausage);
-    	toppings.add(Topping.Onion);
+    	toppings.add(Topping.Pineapple);
+    	toppings.add(Topping.Ham);
     }
     
 	@Override
