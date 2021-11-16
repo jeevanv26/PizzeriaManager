@@ -18,12 +18,24 @@ public class Deluxe extends Pizza{
     
 	@Override
 	public double price() {
-        if(size == Size.Small)
-            return ((smallSize + (toppingIncrease * (toppings.size() - initial))));
-        else if(size == Size.Medium)
-            return ((mediumSize + (toppingIncrease * (toppings.size() - initial))));
-        else
-            return ((largeSize + (toppingIncrease * (toppings.size() - initial))));
+        if(size == Size.Small) {
+        	if(toppings.size() <= initial)
+        		return smallSize;
+        	else
+        		return ((smallSize + (toppingIncrease * (toppings.size() - initial))));
+        }
+        else if(size == Size.Medium) {
+        	if(toppings.size() <= initial)
+        		return mediumSize;
+        	else
+        		return ((mediumSize + (toppingIncrease * (toppings.size() - initial))));
+        }
+        else {
+          	if(toppings.size() <= initial)
+        		return largeSize;
+          	else
+          		return ((largeSize + (toppingIncrease * (toppings.size() - initial))));
+        }
 	}
 
 	@Override

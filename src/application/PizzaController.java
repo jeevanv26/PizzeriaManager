@@ -117,7 +117,7 @@ public class PizzaController {
     		alert.setContentText("Maximum toppings reached");
     		alert.show();
     	}
-    	if(!tp.contains(t.getValue())) {
+    	else if(!tp.contains(t.getValue())) {
     		pizza.toppings.add(t.getValue());
     		list.getItems().add(t.getValue());
     		if(s.getSelectedToggle() !=null ) {
@@ -134,10 +134,10 @@ public class PizzaController {
     
     @FXML
     void removeT(ActionEvent event) {
-    	if(list.getSelectionModel().getSelectedIndex() <  pizza.getIndex())
+    	if(pizza.toppings.size() == 0)
     	{
     		Alert alert = new Alert(AlertType.ERROR);
-    		alert.setContentText("Default Toppings Cannot Be Removed");
+    		alert.setContentText("No toppings left");
     		alert.show();
     	}
     	else {
