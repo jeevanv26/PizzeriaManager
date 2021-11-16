@@ -1,3 +1,5 @@
-public class DeluxeTest {
+package application;
+
+	public class DeluxeTest {
     
 }

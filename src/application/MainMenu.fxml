@@ -1,8 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns:fx="http://javafx.com/fxml/1">
-	<!-- TODO Add Nodes -->
-</AnchorPane>
-
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Create Your Own Pizza">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#newStage" text="Hawaiian" />
+                  <MenuItem mnemonicParsing="false" onAction="#newStage" text="Deluxe" />
+                  <MenuItem mnemonicParsing="false" onAction="#newStage" text="Pepperoni" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Current Order">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#newStage2" text="Current Order" />
+               </items></Menu>
+          <Menu mnemonicParsing="false" text="Store Orders">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#newStage3" text="Store Order" />
+               </items></Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <left>
+      <HBox prefHeight="375.0" prefWidth="188.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label prefHeight="17.0" prefWidth="126.0" text="Enter Phone #:">
+               <HBox.margin>
+                  <Insets top="50.0" />
+               </HBox.margin>
+            </Label>
+            <TextField fx:id="number">
+               <HBox.margin>
+                  <Insets top="50.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+   </left>
+   <center>
+      <Label prefHeight="231.0" prefWidth="397.0" text="Welcome to RU Pizzeria" BorderPane.alignment="CENTER">
+         <font>
+            <Font size="27.0" />
+         </font>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </Label>
+   </center>
+</BorderPane>
