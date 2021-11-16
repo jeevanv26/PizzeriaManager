@@ -1,5 +1,9 @@
 package application;
-
+/**
+ * Subclass of abstract Pizza class and represents a type of pizza
+ * @author Jeevan Vasanthan, Noah Young
+ *
+ */
 
 public class Pepperoni extends Pizza {
     public static final double smallSize = 8.99;
@@ -8,11 +12,17 @@ public class Pepperoni extends Pizza {
     public static final double toppingIncrease = 1.49;
     public static final int initial = 1;
  
+    /**
+     * constructor which sets up default Pepperoni pizza
+     */
     public Pepperoni() {
        
         toppings.add(Topping.Pepperoni);
     }
     
+    /**
+     * calculates price of a pizza
+     */
     @Override
 	public double price() {
     	 if(size == Size.Small) {
@@ -34,7 +44,11 @@ public class Pepperoni extends Pizza {
            		return ((largeSize + (toppingIncrease * (toppings.size() - initial))));
          }
 	}
-
+    
+    /**
+	 * creates a String
+	 * @return a String representation of a Pepperoni Pizza
+	 */
 	@Override
 	public String toString() {
 		String pizza = "Pepperoni Pizza:: ( Toppings: ";
@@ -49,6 +63,11 @@ public class Pepperoni extends Pizza {
 		return pizza;
 	}
 	
+	/**
+	 *  reduces complexity of working with pizza sizes
+	 * @param sze size of pizza as an enum
+	 * @return a String representation of the size of the pizza
+	 */
 	private String getSize(Size sze) {
 		if(sze == Size.Small )
 			return "Small";
@@ -58,7 +77,12 @@ public class Pepperoni extends Pizza {
 			return "Large";
 	}
 
-	public String getTopping(Topping topping) {
+	/**
+	 * reduces complexity of working with pizza toppings
+	 * @param topping topping of pizza as an enum
+	 * @return a String representation of a topping
+	 */
+	private String getTopping(Topping topping) {
 		if(topping == Topping.Bacon)
 			return "Bacon";
 		else if(topping == Topping.Cheese)
@@ -83,12 +107,7 @@ public class Pepperoni extends Pizza {
 			return "Tomato";
 	}
 
-	@Override
-	public int getIndex() {
-		// TODO Auto-generated method stub
-		return initial;
-	}
+	
     
-   
-    
+ 
 }

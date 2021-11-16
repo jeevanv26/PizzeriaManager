@@ -11,7 +11,13 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 
+/**
+ * Creates GUI functionality for when user wants to place an order
+ * @author Jeevan Vasanthan, Noah Young
+ * 
+ */
 public class CurrentOrderController {
+	
 	
 	  private static final int NOT_FOUND = -1;
 
@@ -28,6 +34,9 @@ public class CurrentOrderController {
     
     private MainController mainController;
     
+    /**
+     * initializes GUI stage for Current Orders
+     */
     public void initialize () {
     	 Platform.runLater(() -> {
     		Order o = mainController.getTracker().get(mainController.find(mainController.getNum()));
@@ -46,6 +55,10 @@ public class CurrentOrderController {
     	 
     }
 
+    /**
+     * handles event where user clicks on place order button
+     * @param event event occurrence
+     */
     @FXML
     void placeOrder(ActionEvent event) {
     	Order o = mainController.getTracker().get(mainController.find(mainController.getNum()));
@@ -63,6 +76,10 @@ public class CurrentOrderController {
 		stage.close();
     }
 
+    /**
+     * handles event where user clicks on remove pizza button
+     * @param event event occurrence
+     */
     @FXML
     void removePizza(ActionEvent event) {
     		Order o = mainController.getTracker().get(mainController.find(mainController.getNum()));
@@ -89,6 +106,10 @@ public class CurrentOrderController {
  
     }
     
+    /**
+     * setter method for main controller
+     * @param controller MainController
+     */
     public void setMainController(MainController controller) {
     	mainController = controller;
     }

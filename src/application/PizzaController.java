@@ -20,6 +20,11 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
 
+/**
+ * Creates GUI functionality for creating a pizza
+ * @author Jeevan Vasanthan, Noah Young
+ *
+ */
 public class PizzaController {
 
     @FXML
@@ -46,10 +51,16 @@ public class PizzaController {
     
     public static final int maxToppings = 7;
     
+    /**
+     * constructor of class
+     */
     public PizzaController() {
   
     }
     
+    /**
+     * initializes the stage and sets default values
+     */
     @FXML
     public void initialize() {
     	
@@ -81,6 +92,10 @@ public class PizzaController {
 
     }
     
+    /**
+     * handles event where user wants to add a pizza
+     * @param event event occurrence
+     */
     @FXML
     void addPizza(ActionEvent event) {
     	
@@ -108,6 +123,10 @@ public class PizzaController {
     	}
     }
     
+    /**
+     * handles event where user wants to add topping
+     * @param event event occurrence
+     */
     @FXML
     void addT(ActionEvent event) {
     	ObservableList<Topping> tp= list.getItems();
@@ -132,6 +151,10 @@ public class PizzaController {
     	}
     }
     
+    /**
+     * handles event where user wants to remove topping
+     * @param event event occurrence
+     */
     @FXML
     void removeT(ActionEvent event) {
     	if(pizza.toppings.size() == 0)
@@ -141,17 +164,28 @@ public class PizzaController {
     		alert.show();
     	}
     	else {
-    		pizza.toppings.remove(list.getSelectionModel().getSelectedIndex());
-    		list.getItems().remove(list.getSelectionModel().getSelectedIndex());
+    		if(list.getSelectionModel().getSelectedIndex() == -1) {
+    			Alert alert = new Alert(AlertType.ERROR);
+        		alert.setContentText("Nothing Selected");
+        		alert.show();
+    		}
+    		else {
+    			pizza.toppings.remove(list.getSelectionModel().getSelectedIndex());
+    			list.getItems().remove(list.getSelectionModel().getSelectedIndex());
     		
-    		if(s.getSelectedToggle() != null) {
-    			DecimalFormat df = new DecimalFormat(".00");
-    			p.setText(df.format(pizza.price()));
+    			if(s.getSelectedToggle() != null) {
+    				DecimalFormat df = new DecimalFormat(".00");
+    				p.setText(df.format(pizza.price()));
+    			}
     		}
 	        
     	}
     }
     
+    /**
+     * handles event where user clicks on radio buttons
+     * @param event event occurrence
+     */
     @FXML
     void updatePrice(ActionEvent event) {
     	RadioButton button = (RadioButton)s.getSelectedToggle();
@@ -166,11 +200,19 @@ public class PizzaController {
     }
     
 
-    
+    /**
+     * setter method for controller
+     * @param controller main controller
+     */
     public void setMainController(MainController controller) {
     	mainController = controller;
     }
     
+    /**
+     * checks if a specific order has been started
+     * @param number phone number of user
+     * @return true if order has aleady started, false otherwise
+     */
     public boolean orderStarted(String number) {
     	for(int x = 0; x < mainController.getTracker().size(); x++) {
     		if(number.equals(mainController.getTracker().get(x).getNumber()))

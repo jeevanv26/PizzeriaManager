@@ -9,15 +9,26 @@ import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
 
+/**
+ * creates Store Orders object
+ * @author Jeevan Vasanthan, Noah Young
+ *
+ */
 public class StoreOrders {
 
     private ArrayList<Order> orders;
 
+    /**
+     * initializes array of an orders
+     * @param orders all orders that have been made
+     */
     public StoreOrders(ArrayList<Order>  orders) {
         this.orders = orders;
     }
 
-    
+    /**
+     * lets user save orders into a file
+     */
     public  void export() {
         FileChooser chooser = new FileChooser();
         chooser.setTitle("Open a Target File to Export");

@@ -6,7 +6,17 @@ import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 
+/**
+ * Starts the program
+ * @author Jeevan Vasanthan, Noah Young
+ *
+ */
 public class Main extends Application {
+	
+	/**
+	 * sets up initial primary stage
+	 * @param primaryStage stage that will be set up
+	 */
 	@Override
 	public void start(Stage primaryStage) {
 		try {
@@ -20,6 +30,10 @@ public class Main extends Application {
 		}
 	}
 	
+	/**
+	 * launches the program
+	 * @param args arguments
+	 */
 	public static void main(String[] args) {
 		launch(args);
 	}

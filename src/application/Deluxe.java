@@ -1,5 +1,10 @@
 package application;
 
+/**
+ * Subclass of abstract Pizza class and represents a type of pizza
+ * @author Jeevan Vasanthan, Noah Young
+ *
+ */
 public class Deluxe extends Pizza{
     public static final double smallSize = 12.99;
     public static final double mediumSize = 14.99;
@@ -7,6 +12,9 @@ public class Deluxe extends Pizza{
     public static final double toppingIncrease = 1.49;
     public static final int initial = 5;
 
+    /**
+     * constructor which sets up a default Deluxe pizza
+     */
     public Deluxe() {
     	
         toppings.add(Topping.Sausage);
@@ -16,6 +24,9 @@ public class Deluxe extends Pizza{
         toppings.add(Topping.Mushroom);
     }
     
+    /**
+     * calculates price of pizza
+     */
 	@Override
 	public double price() {
         if(size == Size.Small) {
@@ -38,6 +49,10 @@ public class Deluxe extends Pizza{
         }
 	}
 
+	/**
+	 * creates a String
+	 * @return a String representation of a Deluxe Pizza
+	 */
 	@Override
 	public String toString() {
 		String pizza = "Deluxe Pizza:: ( Toppings: ";
@@ -52,6 +67,11 @@ public class Deluxe extends Pizza{
 		return pizza;
 	}
 	
+	/**
+	 *  reduces complexity of working with pizza sizes
+	 * @param sze size of pizza as an enum
+	 * @return a String representation of the size of the pizza
+	 */
 	private String getSize(Size sze) {
 		if(sze == Size.Small )
 			return "Small";
@@ -61,7 +81,12 @@ public class Deluxe extends Pizza{
 			return "Large";
 	}
 
-	public String getTopping(Topping topping) {
+	/**
+	 * reduces complexity of working with pizza toppings
+	 * @param topping topping of pizza as an enum
+	 * @return a String representation of a topping
+	 */
+	private String getTopping(Topping topping) {
 		if(topping == Topping.Bacon)
 			return "Bacon";
 		else if(topping == Topping.Cheese)
@@ -86,11 +111,7 @@ public class Deluxe extends Pizza{
 			return "Tomato";
 	}
 
-	@Override
-	public int getIndex() {
-		// TODO Auto-generated method stub
-		return initial;
-	}
+	
     
     
 

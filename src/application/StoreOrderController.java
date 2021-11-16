@@ -7,6 +7,11 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ListView;
 import javafx.scene.control.Alert.AlertType;
 
+/**
+ * Creates GUI functionality for seeing and saving store orders
+ * @author Jeevan Vasanthan, Noah Young
+ *
+ */
 public class StoreOrderController {
 
     private static final int NOT_FOUND = -1;
@@ -16,7 +21,9 @@ public class StoreOrderController {
     
     private MainController mainController;
     
-    
+    /**
+     * initializes default values for control features
+     */
     public void initialize() {
  
     	Platform.runLater(() -> {
@@ -27,6 +34,10 @@ public class StoreOrderController {
     });
     }
 
+    /**
+     * handles event where an order needs to be canceled
+     * @param event event occurrence
+     */
     @FXML
     void cancelOrder(ActionEvent event) {
     	if(mainController.getOrders().size() == 0) {
@@ -49,12 +60,20 @@ public class StoreOrderController {
     	}
     }
 
+    /**
+     * handles event where store orders need to be saved
+     * @param event event occurrence
+     */
     @FXML
     void exportOrder(ActionEvent event) {
     	StoreOrders storeOrders = new StoreOrders(mainController.getOrders());
     	storeOrders.export();
     }
     
+    /**
+     * setter method for main controller
+     * @param controller main controller
+     */
     public void setMainController(MainController controller) {
     	mainController = controller;
     }

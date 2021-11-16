@@ -1,6 +1,10 @@
 package application;
 
-
+/**
+ * Subclass of abstract Pizza class and represents a type of pizza
+ * @author Jeevan Vasanthan, Noah Young
+ *
+ */
 public class Hawaiian extends Pizza{
 	
     public static final double smallSize = 10.99;
@@ -9,13 +13,18 @@ public class Hawaiian extends Pizza{
     public static final double toppingIncrease = 1.49;
     public static final int initial = 2;
     
-
+    /**
+     * constructor which sets up default Hawaiian pizza
+     */
     public Hawaiian() {
     	
     	toppings.add(Topping.Pineapple);
     	toppings.add(Topping.Ham);
     }
     
+    /**
+     * calculates price of a pizza
+     */
 	@Override
 	public double price() {
 		
@@ -39,6 +48,10 @@ public class Hawaiian extends Pizza{
 	        }
 	}
 
+	/**
+	 * creates a String
+	 * @return a String representation of a Hawaiian Pizza
+	 */
 	@Override
 	public String toString() {
 		String pizza = "Hawaiian Pizza:: ( Toppings:  ";
@@ -53,6 +66,11 @@ public class Hawaiian extends Pizza{
 		return pizza;
 	}
 	
+	/**
+	 *  reduces complexity of working with pizza sizes
+	 * @param sze size of pizza as an enum
+	 * @return a String representation of the size of the pizza
+	 */
 	private String getSize(Size sze) {
 		if(sze == Size.Small )
 			return "Small";
@@ -61,8 +79,13 @@ public class Hawaiian extends Pizza{
 		else
 			return "Large";
 	}
-
-	public String getTopping(Topping topping) {
+	
+	/**
+	 * reduces complexity of working with pizza toppings
+	 * @param topping topping of pizza as an enum
+	 * @return a String representation of a topping
+	 */
+	private String getTopping(Topping topping) {
 		if(topping == Topping.Bacon)
 			return "Bacon";
 		else if(topping == Topping.Cheese)
@@ -87,10 +110,7 @@ public class Hawaiian extends Pizza{
 			return "Tomato";
 	}
 
-	@Override
-	public int getIndex() {
-		return initial;
-	}
+	
     
 	
 	
