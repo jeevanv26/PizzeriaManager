@@ -42,7 +42,7 @@ public class MainController {
     	
     		try {
     			Stage stage = new Stage();
-    			FXMLLoader loader = new FXMLLoader(getClass().getResource("PizzaCustomization.fxml"));
+    			FXMLLoader loader = new FXMLLoader(getClass().getResource("PizzaView.fxml"));
     			BorderPane root = loader.load();
     	    	PizzaController pizzaController = loader.getController();
     	    	pizzaController.setMainController(this);
@@ -80,7 +80,7 @@ public class MainController {
         	
     		try {
     			Stage stage = new Stage();
-    			FXMLLoader loader = new FXMLLoader(getClass().getResource("CurrentOrder.fxml"));
+    			FXMLLoader loader = new FXMLLoader(getClass().getResource("CurrentView.fxml"));
     			BorderPane root = loader.load();
     	    	CurrentOrderController orderController = loader.getController();
     	    	orderController.setMainController(this);
@@ -111,7 +111,7 @@ public class MainController {
     	else {
     	try {
     		Stage stage = new Stage();
-    		FXMLLoader loader = new FXMLLoader(getClass().getResource("StoreOrder.fxml"));
+    		FXMLLoader loader = new FXMLLoader(getClass().getResource("StoreOrderView.fxml"));
 			BorderPane root = loader.load();
 	    	StoreOrderController oController = loader.getController();
 	    	oController.setMainController(this);

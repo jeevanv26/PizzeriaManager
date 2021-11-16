@@ -1,5 +1,6 @@
 package application;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Order {
@@ -43,8 +44,8 @@ public class Order {
 	    	order += pizzas.get(x).toString();
 	    	order += "\n";
 	    }
-    	
-    	return order;
+    	DecimalFormat df = new DecimalFormat(".00");
+    	return order + "Total: " +df.format(getTotalPrice());
     }
     
     public ArrayList<Pizza> getO(){

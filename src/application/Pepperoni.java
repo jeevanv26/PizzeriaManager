@@ -33,7 +33,7 @@ public class Pepperoni extends Pizza {
 				pizza += getTopping(toppings.get(x))+", ";
 		
 		}
-		pizza = pizza + getSize(size)+ " Subtotal: " + this.price();
+		pizza = pizza + getSize(size)+ ", Subtotal: " + this.price();
 		return pizza;
 	}
 	

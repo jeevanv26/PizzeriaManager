@@ -43,6 +43,7 @@ public class StoreOrderController {
     		else {
     		Order order= mainController.getOrders().get(listView.getSelectionModel().getSelectedIndex());
     		mainController.removeOrderFinal(order);
+    		mainController.removeOrder(order);
     		listView.getItems().remove(listView.getSelectionModel().getSelectedIndex());
     		}
     	}
